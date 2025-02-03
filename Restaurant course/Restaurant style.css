@@ -1,0 +1,213 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#F9F9F9;
+    color: #333333;
+}
+
+h1, h2 { /* Fancy font for headings */
+    font-family: 'Poppins', sans-serif
+}
+h1.company-name { /* Making company name stand out at top of page */
+    font-size: 64px;
+    font-weight: bold;
+    color: darkgray;
+    margin: 0;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero { /* Setting hero section into middle and making it clearly visible */
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 16px;
+    margin-bottom: 0px;
+    margin-top: -40px;
+
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px
+}
+.hero h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero .cta-button { /* Making a red clickable button that will redirect page */
+    background-color: #e65a50;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.hero .cta-button:hover {
+    background-color: #e65a50;
+    transform: scale(1.05);
+}
+
+header {
+    display: flex; /* sectioning off top  and fitting it in the middle */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 82px;
+    width:auto;
+    border-width: 0;
+}
+
+.company-name {
+    margin-left: 5px;
+    font-size: 28px;
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Arial
+}
+
+main {
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.gallery { /* Grid for images to display lined up horizontally as desired, each column is 350px wide */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 12px;
+    padding: 20px;
+    margin-top: -40px;
+}
+
+.image-item { /* Setting the area to fit neatly around the image and description while also making outline of box around each image visible */
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow .3s ease;
+    background-color: #FF746C;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-item img { /* Image will automatically fit based off width of container*/
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid #333;
+    border-radius: 12px;
+}
+
+.image-item h2, .image-item p {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.about-owner { /* Giving owner description the right fit and look */
+    margin-top: 40px;
+    text-align: center;
+    background-color: #89CFF0;
+    margin-bottom: 5px;
+    border-left: 5px;
+    border-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    border-radius: 12px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer { /* Section for bottom of page fit around center */
+    text-align: center;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #ddd;
+}
+
+.social-media img {
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.social-media:hover {
+    opacity: 0.8;
+}
+
+img { /* All images have constant size with borders and spacing */
+    width: 200px;
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #333;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Dish Details Styles */
+.image-detail { /* Larger sized image of food item goes in center */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.image-detail img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#detail-long-desc { /* Style for text of longer description */
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 20px;
+    text-align: left;
+}
+
+
+/* Resizes content based off size of window */
+@media (max-width: 768px) {
+    .image-item {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .image-item {
+        flex: 1 1 100%;
+    }
+}

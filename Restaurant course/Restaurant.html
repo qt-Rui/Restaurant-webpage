@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Restaurant style.css">
+</head>
+<body>
+    <header> <!-- Company name and logo on top -->
+        <div class="logo">
+            <img src="icon/Restaurant Logo.png" alt="Food Truck Icon">
+        </div>
+        <h1 class="company-name">NuyoRican Kitchen</h1>
+    </header>
+
+    <main>
+        <section class="hero"> <!-- Introduction for top of page-->
+            <div class="hero-content">
+                <h2>Welcome to the NuyoRican Kitchen Foodtruck</h2>
+                <p>Experience the taste of New York and Puerto Rico in every bite</p>
+                <a href="#" class="cta-button">Explore Our Menu</a>
+            </div>
+        </section>
+
+        <section class="gallery"> <!-- item image, description, and name will show in order -->
+            <div class="image-item" data-long-desc="Longer description of image.">
+                <img src="Food images/Chicken and Shrimp Alfredo.png" alt="Image 1">
+                <h2>Chicken and Shrimp Alfredo</h2>
+                <p>Description</p>
+            </div>
+            <div class="image-item" data-long-desc="Longer description of image.">
+                <img src="Food images/Cheesy Risotto and Fish.png" alt="Image 2">
+                <h2>Cheesy Risotto and Fish</h2>
+                <p>Description</p>
+            </div>
+            <div class="image-item" data-long-desc="Longer description of image.">
+                <img src="Food images/Chicken and Rice.jpg" alt="Image 3">
+                <h2>Bacon Wrapped Chicken with Rice and Beans</h2>
+                <p>Description</p>
+            </div>
+            <div class="image-item" data-long-desc="Longer description of image.">
+                <img src="Food images/Rice and Beans with Steak.png" alt="Image 4">
+                <h2>Rice and Beans with Steak</h2>
+                <p>Description</p>
+            </div>
+            <div class="image-item" data-long-desc="Longer description of image.">
+                <img src="Food images/Salmon and Potato.png" alt="Image 5">
+                <h2>Salmon and Potato</h2>
+                <p>Description</p>
+            </div>
+        </section>
+
+        <section class="about-owner"> <!-- Brief description about owner on bottom-->
+            <h2>About the Chef</h2>
+            <p>
+                <strong>Born and raised as a American and Puerto Rican in New York, 
+                he lived there for most of his life where he would learn most of his cooking from his father growing up. 
+                As he grew older, he found his passion in cooking and has no plan to stop in making the perfect dishes for people to crave</strong>
+            </p>
+        </section>
+    </main>
+
+    <footer> <!-- Owner social media-->
+        <div class="social-media">
+            <a href="https://facebook.com/company" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="https://twitter.com/company" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="https://instagram.com/thenuyoricankitchen2023?igsh" target="https://www.instagram.com/thenuyoricankitchen2023?igsh=ZHF3NjY1aXoyejc2"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+    <script>
+        // If item is clicked then event will trigger to load page associated with item
+        document.querySelectorAll('.image-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Get the image source, title, and description
+                const imgSrc = item.querySelector('img').src;
+                const title = item.querySelector('h2').textContent;
+                const description = item.querySelector('p').textContent;
+                const longDesc = item.getAttribute('data-long-desc');
+    
+                // Redirect to the detail page with query parameters
+                window.location.href = `DishDetails.html?img=${encodeURIComponent(imgSrc)}&title=${encodeURIComponent(title)}&desc=${encodeURIComponent(description)}&longDesc=${encodeURIComponent(longDesc)}`;
+            });
+        });
+    </script>
+</body>
+</html>

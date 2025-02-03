@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dish Overview</title>
+    <link rel="stylesheet" href="Restaurant style.css">
+</head>
+<body>
+    <header>
+         <!-- Displaying icon and name on top -->
+        <div class="logo">
+            <img src="icon/Restaurant Logo.png" alt="Restaurant Icon">
+        </div>
+        <h1 class="company-name">NuyoRican Kitchen</h1>
+    </header>
+
+    <main> <!-- Will show parts about item in order listed -->
+        <section class="image-detail">
+            <img id="detail-img" src="" alt="Detail Image">
+            <h2 id="detail-title"></h2>
+            <p id="detail-short-desc"></p>
+            <p id="detail-long-desc"></p>
+        </section>
+    </main>
+
+    <footer> <!-- Plugging owner social media -->
+        <div class="social-media">
+            <a href="https://facebook.com/company" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="https://twitter.com/company" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="https://instagram.com/thenuyoricankitchen2023?igsh" target="https://www.instagram.com/thenuyoricankitchen2023?igsh=ZHF3NjY1aXoyejc2"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        // Getting query parameters from URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Reading data for food item
+        const imgSrc = getQueryParam('img');
+        const title = getQueryParam('title');
+        const shortDesc = getQueryParam('desc');
+        const longDesc = getQueryParam('longDesc')
+
+        // Displaying data for food item
+        document.getElementById('detail-img').src = imgSrc;
+        document.getElementById('detail-title').textContent = title;
+        document.getElementById('detail-short-desc').textContent = shortDesc;
+        document.getElementById('detail-long-desc').textContent = longDesc;
+    </script>
+</body>
+</html>
